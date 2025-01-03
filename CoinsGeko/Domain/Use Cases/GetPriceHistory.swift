@@ -5,7 +5,7 @@
 //  Created by Field on 24/12/24.
 //
 protocol GetPriceHistoryType {
-    func execute(id: String, days: Int) async -> Result<PriceHistory, CryptoCurrencyFailure>
+    func execute(id: String, day: Int) async -> Result<PriceHistory, CryptoCurrencyFailure>
 }
 
 class GetPriceHistory: GetPriceHistoryType {
@@ -15,7 +15,7 @@ class GetPriceHistory: GetPriceHistoryType {
         self.repository = repository
     }
     
-    func execute(id: String, days: Int) async -> Result<PriceHistory, CryptoCurrencyFailure> {
-        return await repository.getById(id: id, days: days)
+    func execute(id: String, day: Int) async -> Result<PriceHistory, CryptoCurrencyFailure> {
+        return await repository.getById(id: id, day: day)
     }
 }

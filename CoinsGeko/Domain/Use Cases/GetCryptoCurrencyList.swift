@@ -24,6 +24,7 @@ class GetCryptoCurrencyList: GetCryptoCurrencyListType {
             }
             
             return .failure(error)
+           
         }
         
         return .success(cryptoList.sorted { $0.marketCap < $1.marketCap})
